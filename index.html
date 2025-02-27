@@ -1,8 +1,67 @@
-<html>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <title>My GitHub Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quà Sinh Nhật</title>
+    <style>
+        body {
+            text-align: center;
+            background: url('https://i.imgur.com/7QG9WcB.png') no-repeat center center;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .gift-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px;
+            margin: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .gift-button:disabled {
+            background-color: #ccc;
+            cursor: default;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
+    <h1>Quà Sinh Nhật</h1>
+    <div class="container" id="buttons-container"></div>
+    <div id="result">Phần thưởng sẽ hiện ở đây</div>
+    
+    <script>
+        const gifts = ["Xe đạp", "Gấu bông", "Bánh kem", "Voucher mua sắm", "Chuyến du lịch", "Đồng hồ", "Laptop", "Tai nghe", "Điện thoại", "Sách", "Balo", "Bút ký", "Áo thun", "Ly cốc", "Bộ mỹ phẩm", "Giày thể thao"];
+        
+        function createButtons() {
+            const container = document.getElementById('buttons-container');
+            for (let i = 1; i <= 16; i++) {
+                let btn = document.createElement('button');
+                btn.innerText = i;
+                btn.className = 'gift-button';
+                btn.onclick = function () { revealGift(i - 1, btn); };
+                container.appendChild(btn);
+            }
+        }
+        
+        function revealGift(index, btn) {
+            document.getElementById('result').innerText = "🎁 Bạn nhận được: " + gifts[index] + "!";
+            btn.disabled = true;
+        }
+        
+        createButtons();
+    </script>
 </body>
 </html>
+
