@@ -12,43 +12,49 @@
             font-family: Arial, sans-serif;
             color: black;
             margin: 0;
-            padding-top: 250px; /* Đẩy xuống để tránh logo */
+            padding-top: 250px;
         }
         .container {
             margin-top: 30px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
         }
         .gift-button {
             background-color: #007bff;
             color: white;
             border: none;
-            padding: 10px;
+            padding: 20px;
             cursor: pointer;
-            border-radius: 10px;
-            width: 60px;
-            height: 60px;
-            font-size: 16px;
+            border-radius: 15px;
+            width: 120px;
+            height: 120px;
+            font-size: 24px;
             font-weight: bold;
         }
         #result-container {
             margin-top: 40px;
             display: flex;
-            flex-direction: column; /* Sắp xếp chữ và ảnh theo chiều dọc */
+            flex-direction: column;
             align-items: center;
             background: white;
             padding: 20px;
             border-radius: 10px;
             width: 90%;
-            max-width: 600px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
+        #result {
+            font-size: 32px;
+            font-weight: bold;
+        }
         .gift-container img {
-            max-width: 150px; /* Ảnh lớn hơn */
-            margin-top: 10px;
+            max-width: 100%;
+            width: 600px;
+            height: auto;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -64,7 +70,8 @@
         const gifts = [
             "USB", "Sạc dự phòng", "Loa Bluetooth", "Dây nhảy", "Vớ thể thao", 
             "Vợt cầu lông", "Bìa hộ chiếu", "Túi đựng đồ cá nhân", "Thẻ cá nhân", 
-            "Dấu sách", "Đèn kẹp bàn", "Sổ ghi chú"
+            "Dấu sách", "Đèn kẹp bàn", "Sổ ghi chú", "USB", "Dây nhảy", 
+            "Bìa hộ chiếu", "Dấu sách"
         ];
 
         const giftImages = [
@@ -79,7 +86,11 @@
             "https://i.postimg.cc/8542RXf1/t-i-xu-ng-6.jpg",
             "https://i.postimg.cc/Y0yTV4xZ/t-i-xu-ng-7.jpg",
             "https://i.postimg.cc/5y7MVKfP/images-1.jpg",
-            "https://i.postimg.cc/pVqvzrKD/images-2.jpg"
+            "https://i.postimg.cc/pVqvzrKD/images-2.jpg",
+            "https://i.postimg.cc/rspvQG55/t-i-xu-ng.jpg",
+            "https://i.postimg.cc/PqsnTwkk/t-i-xu-ng-3.jpg",
+            "https://i.postimg.cc/1X5Zb11n/4ecb649a-847a-4a5a-a996-39991131441f.jpg",
+            "https://i.postimg.cc/Y0yTV4xZ/t-i-xu-ng-7.jpg"
         ];
         
         function createButtons() {
